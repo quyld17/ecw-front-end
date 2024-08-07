@@ -122,11 +122,7 @@ export default function NavigationBar() {
           <p className={styles.userEmail}>{userEmail}</p>
         </Dropdown>
       ) : (
-        <Dropdown
-          menu={{ items }}
-          trigger={["click", "hover"]}
-          placement="bottom"
-        >
+        <Dropdown menu={{ items }} trigger={["click"]} placement="bottom">
           <div className={styles.userLogoWrapper}>
             <BiUserCircle className={styles.userLogo} />
           </div>

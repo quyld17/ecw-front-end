@@ -6,8 +6,8 @@ import NavigationBar from "../../components/navigation-bar";
 import styles from "../../styles/user-change-password.module.css";
 
 import { Form, Input, Button, message } from "antd";
-import UserSideBar from "@/components/user/side-bar";
-import { handleChangePasswordAPI } from "@/api/handlers/user";
+import UserSideBar from "@/src/components/user/side-bar";
+import { handleChangePasswordAPI } from "@/src/api/handlers/user";
 
 const credentialsValidate = (user) => {
   const formValidate = () => {

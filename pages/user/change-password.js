@@ -52,10 +52,20 @@ export default function PurchaseHistory() {
     if (!credentialsValidate(user)) {
       handleChangePasswordAPI(user)
         .then((data) => {
-          message.success(data);
+          if (typeof data === "object") {
+            // message.success(data.message || "Password changed successfully!");
+            message.error("Wrong password");
+          } else {
+            message.success(data);
+          }
         })
         .catch((error) => {
-          message.error(error);
+          console.log(error);
+          if (typeof error === "object") {
+            message.error(error.message || "An error occurred.");
+          } else {
+            message.error(error);
+          }
         });
     }
   };

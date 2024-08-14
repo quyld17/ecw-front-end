@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+  build:
+    commands:
+      - docker build -t ecw-front-end .
+  post_build:
+    commands:
+      - docker tag ecw-front-end:latest quyld17/ecw-front-end:latest
+      - docker push quyld17/ecw-front-end:latest

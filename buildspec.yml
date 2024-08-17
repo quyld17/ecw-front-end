@@ -34,3 +34,4 @@ phases:
     commands:
       - echo Pushing Docker image to Docker Hub...
       - docker push quyld17/ecw-front-end:latest
+      - aws lambda invoke --function-name EC2DeploymentTrigger --region ap-southeast-1 /tmp/lambda_output.txt
